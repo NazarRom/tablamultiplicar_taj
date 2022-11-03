@@ -1,4 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './Router'
 
-createApp(App).mount('#app')
+
+const app = createApp(App)
+app.use(router).mount('#app')
+app.config.globalProperties.$filters={
+    multiplicar(numero,contador){
+        return numero * contador
+    }
+}
